@@ -1,3 +1,5 @@
+import Box from './Box';
+
 type SymbolValue = 'X' | 'O' | null;
 
 interface BoardProps {
@@ -21,10 +23,7 @@ const Board: React.FC<BoardProps> = (props) => {
                 </div>
             ))}
             {props.winner && (
-                <div className='box'>
-                    <h3>{props.winner}</h3>
-                    <button onClick={props.resetGame}>New Game</button>
-                </div>
+                <Box winner={props.winner} resetGame={props.resetGame} />
             )}
         </div>
     );
